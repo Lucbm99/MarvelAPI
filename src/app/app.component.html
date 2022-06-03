@@ -1,5 +1,29 @@
-<p *ngFor="let character of allCharacters | async">
+<div fxFlex fxLayout="column">
+    <div fxLayout="row wrap">
+        <!-- posicionamento dos cards -->
+        <div 
+            fxFlex="25"
+            fxFlex.md="33"
+            fxFlex.sm="50"
+            fxFlex.xs="100"
+            fxLayout="column"
+            *ngFor="let character of allCharacters | async"
+            style="padding: 5px;"> 
+            <mat-card>
+                <img 
+                    mat-card-image 
+                    src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}" 
+                    alt="{{ character.name }}"
+                >
+                <mat-card-title>
+                    {{ character.name }}
+                </mat-card-title>
 
-    {{ character | json}}
-    
-</p>
+                <!-- detalhes - personagens -->
+                <mat-card-footer>
+                    <button (click)="openDialog()" fxFlex mat-raised-button color="primary">Ver detalhes</button>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</div>

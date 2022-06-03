@@ -1,0 +1,35 @@
+<div class="flex flex-col min-w-200 max-h-screen -m-6 container-detalhes-clientes">
+    <!-- Header -->
+    <div class="flex flex-0 items-center justify-between h-16 pr-3 sm:pr-5 pl-6 sm:pl-8 bg-primary text-on-primary">
+        <button
+            mat-icon-button
+            [tabIndex]="-1"
+            (click)="closeModalCharacters()"
+            title="Fechar modal"
+            >
+            <mat-icon
+                class="text-current"
+                [svgIcon]="'heroicons_outline:x'"></mat-icon>
+        </button>
+    </div>
+    <div class="mt-4 sm:mt-6 flex justify-end">
+        <button
+            class="mat-focus-indicator sm:mx-3 mat-flat-button mat-button-base mat-warn mb-3" 
+            ng-reflect-color="warn"
+            type="button"
+            mat-flat-button                
+            color="warn"
+            (click)="closeModalCharacters()"
+            title="Fechar modal"
+            >
+            <span>Fechar</span>
+            <span 
+                matripple="" 
+                class="mat-ripple mat-button-ripple" 
+                ng-reflect-disabled="false" 
+                ng-reflect-centered="false" 
+                ng-reflect-trigger="[object HTMLButtonElement]"
+            ></span>
+        </button>
+    </div>
+</div>
