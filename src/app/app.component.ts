@@ -27,8 +27,11 @@ export class AppComponent implements OnInit {
     this.allCharacters = this._marvelService.getAllCharacters();
   }
 
-  openDialog() {
-    const dialogRef = this._matDialog.open(ModalDetailsCharactersComponent, {data: {}});
+  openDialog(character: any) {
+    const dialogRef = this._matDialog.open(ModalDetailsCharactersComponent, {
+      data: {
+        character
+      }});
     dialogRef.afterClosed().subscribe((result) => {});
   }
 }
