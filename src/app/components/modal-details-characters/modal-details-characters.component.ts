@@ -17,6 +17,7 @@ export class ModalDetailsCharactersComponent implements OnInit {
   ) { 
     this.details = data;
     console.log(this.details)
+    console.log("Comics: ", this.details.character.comics.items)
   }
 
   ngOnInit(): void {

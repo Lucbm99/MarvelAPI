@@ -12,12 +12,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalDetailsCharactersComponent } from './components/modal-details-characters/modal-details-characters.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalDetailsCharactersComponent
+    ModalDetailsCharactersComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +32,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule, 
     MatFormFieldModule,
     MatIconModule,
+    MatToolbarModule,
     MatButtonModule,
     FlexLayoutModule,
+    MatListModule,
+    MatSidenavModule,
     MatDialogModule,
   ],
   providers: [],
