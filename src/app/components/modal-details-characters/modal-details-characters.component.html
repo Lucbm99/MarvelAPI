@@ -1,7 +1,6 @@
-<div class="modal-hero">
-    <h1 mat-dialog-title>Informações - Heroi: {{ details.character.name }} </h1>
-    <div mat-dialog-content>Id: {{ details.character.id }}</div>
-    <div mat-dialog-content>Descrição: {{ details.character.description ?? '-'}}</div>
+<!-- <div class="modal-hero">
+    <h1 mat-dialog-title> </h1>
+    <div mat-dialog-content></div>
     <ul>
         <h3>Histórias em quadrinhos:</h3>
         <span *ngFor="let character of details.character.comics.items">
@@ -28,5 +27,66 @@
     </ul>
     <div mat-dialog-actions>
         <button mat-button mat-dialog-close>Fechar</button>
+        <button
+  class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400">Hello</button>
+    </div>
+</div> -->
+
+
+<div class="flex flex-col min-w-200 max-h-screen -m-6">
+    <!-- Header -->
+    <div class="flex flex-0 items-center justify-between h-16 pr-3 sm:pr-5 pl-6 sm:pl-8 bg-primary text-on-primary">
+        <div class="text-lg font-medium">Informações - Heroi: {{ details.character.name }}</div>
+        <button
+            mat-icon-button
+            [tabIndex]="-1"
+            (click)="closeModalCharacters()"
+            >
+            <mat-icon
+                class="text-current"
+                [svgIcon]="'heroicons_outline:x'"></mat-icon>
+        </button>
+    </div>
+    <div
+        class="flex flex-col flex-auto p-6 sm:p-8"
+    >
+        Descrição: {{ details.character.description ?? '-'}}
+        <br>
+        <ul>
+            <h3>Histórias em quadrinhos:</h3>
+            <span *ngFor="let character of details.character.comics.items">
+                <li>{{character.name}}</li>              
+            </span>
+        </ul>
+        <ul>
+            <h3>Eventos:</h3>
+            <span *ngFor="let character of details.character.events.items">
+                <li>{{character?.name ?? '-'}}</li>              
+            </span>
+        </ul>
+        <ul>
+            <h3>Series:</h3>
+            <span *ngFor="let character of details.character.series.items">
+                <li>{{character.name || '-'}}</li>              
+            </span>
+        </ul>
+        <ul>
+            <h3>Histórias:</h3>
+            <span *ngFor="let character of details.character.stories.items">
+                <li>{{character.name || '-'}}</li>              
+            </span>
+        </ul>
+
+        <!-- footer -->
+        <div class="mt-4 sm:mt-6 flex justify-end">
+            <button
+                class="sm:mx-3 bg-red-100"
+                mat-button
+                color="warn"
+                (click)="closeModalCharacters()"
+                >
+                <span>Fechar</span>
+            </button>
+        </div>
     </div>
 </div>

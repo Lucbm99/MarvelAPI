@@ -10,7 +10,7 @@
             fxLayout="column"
             *ngFor="let character of allCharacters | async"
             style="padding: 5px;"> 
-            <mat-card>
+            <mat-card class="bg-primary">
                 <img 
                     mat-card-image 
                     src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}" 
