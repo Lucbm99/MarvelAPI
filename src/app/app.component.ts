@@ -29,9 +29,9 @@ export class AppComponent implements OnInit {
 
   openDialog(character: any) {
     const dialogRef = this._matDialog.open(ModalDetailsCharactersComponent, {
-      data: {
-        character
-      }});
+      data: { character },
+      width: '90px',
+    });
     dialogRef.afterClosed().subscribe((result) => {});
   }
 }

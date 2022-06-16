@@ -1,11 +1,32 @@
-<h1 mat-dialog-title>Heroi: {{ details.character.name }}</h1>
-<div mat-dialog-content>Id: {{ details.character.id }}</div>
-<div mat-dialog-content>Descrição: {{ details.character.description ?? '-'}}</div>
-<ul class="block2" >
-    <span *ngFor="let character of details.character.comics.items">
-    <li>{{character.name}}</li>              
-    </span>
-</ul>
-<div mat-dialog-actions>
-    <button mat-button mat-dialog-close>Fechar</button>
+<div class="modal-hero">
+    <h1 mat-dialog-title>Informações - Heroi: {{ details.character.name }} </h1>
+    <div mat-dialog-content>Id: {{ details.character.id }}</div>
+    <div mat-dialog-content>Descrição: {{ details.character.description ?? '-'}}</div>
+    <ul>
+        <h3>Histórias em quadrinhos:</h3>
+        <span *ngFor="let character of details.character.comics.items">
+            <li>{{character.name}}</li>              
+        </span>
+    </ul>
+    <ul>
+        <h3>Eventos:</h3>
+        <span *ngFor="let character of details.character.events.items">
+            <li>{{character?.name ?? '-'}}</li>              
+        </span>
+    </ul>
+    <ul>
+        <h3>Series:</h3>
+        <span *ngFor="let character of details.character.series.items">
+            <li>{{character.name || '-'}}</li>              
+        </span>
+    </ul>
+    <ul>
+        <h3>Histórias:</h3>
+        <span *ngFor="let character of details.character.stories.items">
+            <li>{{character.name || '-'}}</li>              
+        </span>
+    </ul>
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close>Fechar</button>
+    </div>
 </div>

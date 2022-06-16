@@ -16,8 +16,6 @@ export class ModalDetailsCharactersComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { 
     this.details = data;
-    console.log(this.details)
-    console.log("Comics: ", this.details.character.comics.items)
   }
 
   ngOnInit(): void {
