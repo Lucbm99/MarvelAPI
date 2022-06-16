@@ -11,7 +11,12 @@ import { MarvelApiService } from 'src/app/services/marvel-api.service';
 })
 export class CharactersComponent implements OnInit {
 
-  allCharacters!: Observable<any>;
+  characters!: Observable<any>;
+  comics!: Observable<any>;
+  creators!: Observable<any>;
+  events!: Observable<any>;
+  series!: Observable<any>;
+  stories!: Observable<any>;
   
   constructor(
     private _marvelService: MarvelApiService,
@@ -24,7 +29,7 @@ export class CharactersComponent implements OnInit {
   }
 
   getCharacters() {
-    this.allCharacters = this._marvelService.getAllCharacters();
+    this.characters = this._marvelService.getCharacters();
   }
 
   openDialog(character: any) {

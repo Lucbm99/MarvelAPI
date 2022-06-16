@@ -18,8 +18,48 @@ export class MarvelApiService {
     private _httpClient: HttpClient,
   ) { }
 
-    getAllCharacters(): Observable<any> {
+    getCharacters(): Observable<any> {
       return this._httpClient.get<any>(`${this.baseUrl}public/characters?ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`)
+      .pipe(
+        map((data: any) => 
+          data.data.results
+        ))
+    }
+
+    getComics(): Observable<any> {
+      return this._httpClient.get<any>(`${this.baseUrl}public/comics?ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`)
+      .pipe(
+        map((data: any) => 
+          data.data.results
+        ))
+    }
+
+    getCreators(): Observable<any> {
+      return this._httpClient.get<any>(`${this.baseUrl}public/creators?ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`)
+      .pipe(
+        map((data: any) => 
+          data.data.results
+        ))
+    }
+
+    getEvents(): Observable<any> {
+      return this._httpClient.get<any>(`${this.baseUrl}public/events?ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`)
+      .pipe(
+        map((data: any) => 
+          data.data.results
+        ))
+    }
+
+    getSeries(): Observable<any> {
+      return this._httpClient.get<any>(`${this.baseUrl}public/series?ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`)
+      .pipe(
+        map((data: any) => 
+          data.data.results
+        ))
+    }
+
+    getStories(): Observable<any> {
+      return this._httpClient.get<any>(`${this.baseUrl}public/stories?ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`)
       .pipe(
         map((data: any) => 
           data.data.results
