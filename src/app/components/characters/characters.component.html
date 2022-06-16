@@ -1,0 +1,37 @@
+<div fxFlex fxLayout="column">
+    <app-navbar></app-navbar>
+    <div fxLayout="row wrap">
+        <!-- posicionamento dos cards -->
+        <div 
+            fxFlex="25"
+            fxFlex.md="33"
+            fxFlex.sm="50"
+            fxFlex.xs="100"
+            fxLayout="column"
+            *ngFor="let character of allCharacters | async"
+            style="padding: 5px;"> 
+            <mat-card>
+                <img 
+                    mat-card-image 
+                    src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}" 
+                    [alt]="character.name"
+                    [title]="character.name"
+                >
+                <mat-card-title class="text-center" [title]="character.name">
+                    {{ character.name }}
+                </mat-card-title>
+                <!-- detalhes - personagens -->
+                <mat-card-footer>
+                    <button 
+                        (click)="openDialog(character)" 
+                        fxFlex mat-raised-button 
+                        color="primary"
+                        title="Ver detalhes"
+                    >
+                        Ver detalhes
+                    </button>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</div>

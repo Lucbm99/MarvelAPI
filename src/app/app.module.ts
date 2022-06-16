@@ -16,13 +16,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatListModule } from '@angular/material/list';
+import { CharactersComponent } from './components/characters/characters.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalDetailsCharactersComponent,
-    NavbarComponent
+    NavbarComponent,
+    CharactersComponent
   ],
   imports: [
     BrowserModule,

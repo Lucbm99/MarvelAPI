@@ -1,92 +1,55 @@
-<!-- <div class="modal-hero">
-    <h1 mat-dialog-title> </h1>
-    <div mat-dialog-content></div>
-    <ul>
-        <h3>Histórias em quadrinhos:</h3>
-        <span *ngFor="let character of details.character.comics.items">
-            <li>{{character.name}}</li>              
-        </span>
-    </ul>
-    <ul>
-        <h3>Eventos:</h3>
-        <span *ngFor="let character of details.character.events.items">
-            <li>{{character?.name ?? '-'}}</li>              
-        </span>
-    </ul>
-    <ul>
-        <h3>Series:</h3>
-        <span *ngFor="let character of details.character.series.items">
-            <li>{{character.name || '-'}}</li>              
-        </span>
-    </ul>
-    <ul>
-        <h3>Histórias:</h3>
-        <span *ngFor="let character of details.character.stories.items">
-            <li>{{character.name || '-'}}</li>              
-        </span>
-    </ul>
-    <div mat-dialog-actions>
-        <button mat-button mat-dialog-close>Fechar</button>
-        <button
-  class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400">Hello</button>
-    </div>
-</div> -->
-
-
 <div class="flex flex-col min-w-200 max-h-screen -m-6">
     <!-- Header -->
-    <div class="flex flex-0 items-center justify-between h-16 pr-3 sm:pr-5 pl-6 sm:pl-8 bg-primary text-on-primary">
-        <div class="text-lg font-medium">Informações - Heroi: {{ details.character.name }}</div>
-        <button
-            mat-icon-button
-            [tabIndex]="-1"
-            (click)="closeModalCharacters()"
-            >
-            <mat-icon
-                class="text-current"
-                [svgIcon]="'heroicons_outline:x'"></mat-icon>
-        </button>
+    <div class="header-modal">
+        <div class="text-lg text-white font-medium" title="Informações - Personagem: {{ details.character.name }}">Informações - Personagem: {{ details.character.name }}</div>
     </div>
     <div
         class="flex flex-col flex-auto p-6 sm:p-8"
     >
-        Descrição: {{ details.character.description ?? '-'}}
-        <br>
+        <h3 title="Descrição">Descrição:</h3> 
+            <p [title]="details.character.description">
+                {{details.character.description}}
+            </p>
+        <hr>
         <ul>
-            <h3>Histórias em quadrinhos:</h3>
+            <h3 title="Histórias em quadrinhos">Histórias em quadrinhos:</h3>
             <span *ngFor="let character of details.character.comics.items">
-                <li>{{character.name}}</li>              
+                <li class="list-inside" [title]="character.name">{{character.name}}</li>              
             </span>
         </ul>
+        <hr>
         <ul>
-            <h3>Eventos:</h3>
+            <h3 title="Eventos">Eventos:</h3>
             <span *ngFor="let character of details.character.events.items">
-                <li>{{character?.name ?? '-'}}</li>              
+                <li class="list-inside" [title]="character.name">{{character.name}}</li>              
             </span>
         </ul>
+        <hr>
         <ul>
-            <h3>Series:</h3>
+            <h3 title="Series">Series:</h3>
             <span *ngFor="let character of details.character.series.items">
-                <li>{{character.name || '-'}}</li>              
+                <li class="list-inside" [title]="character.name">{{character.name}}</li>              
             </span>
         </ul>
+        <hr>
         <ul>
-            <h3>Histórias:</h3>
+            <h3 title="Histórias">Histórias:</h3>
             <span *ngFor="let character of details.character.stories.items">
-                <li>{{character.name || '-'}}</li>              
+                <li class="list-inside" [title]="character.name">{{character.name}}</li>              
             </span>
         </ul>
+        <hr>
 
-        <!-- footer -->
-        <div class="mt-4 sm:mt-6 flex justify-end">
-            <button
-                class="sm:mx-3 bg-red-100"
-                mat-button
-                color="warn"
-                (click)="closeModalCharacters()"
-                >
-                <span>Fechar</span>
-            </button>
-        </div>
+    </div>
+    <!-- footer -->
+    <div class="p-4 flex justify-end footer-modal">
+        <button
+            class="sm:mx-3 bg-red-300"
+            mat-stroked-button            
+            (click)="closeModalCharacters()"
+            title="Fechar modal"
+            >
+            <span title="Fechar modal">Fechar</span>
+        </button>
     </div>
 </div>
