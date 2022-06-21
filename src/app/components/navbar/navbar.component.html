@@ -1,8 +1,23 @@
 <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport>
+        <mat-toolbar color="primary">Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item href="#">Link 1</a>
+            <a mat-list-item href="#">Link 2</a>
+            <a mat-list-item href="#">Link 3</a>
+        </mat-nav-list>
+    </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar color="primary">
-            <span  title="Marvel - personagens">Marvel - personagens</span>
+        <mat-toolbar color="primary" class="flex justify-between">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button>
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+            <span>Marvel - personagens</span>
+            <input 
+                type="text"
+                placeholder="Pesquise..."
+                class="rounded text-sm text-black p-2 outline-none">
         </mat-toolbar>
-        <router-outlet></router-outlet>
+        <router-outlet> </router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
