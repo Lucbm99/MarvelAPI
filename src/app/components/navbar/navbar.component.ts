@@ -1,4 +1,6 @@
+import { MarvelApiService } from './../../services/marvel-api.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +12,6 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }

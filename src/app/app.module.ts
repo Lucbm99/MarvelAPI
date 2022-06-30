@@ -17,14 +17,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatListModule } from '@angular/material/list';
 import { CharactersComponent } from './components/characters/characters.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ComicsComponent } from './components/comics/comics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalDetailsCharactersComponent,
     NavbarComponent,
-    CharactersComponent
+    CharactersComponent,
+    ComicsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,8 @@ import { CharactersComponent } from './components/characters/characters.componen
     BrowserAnimationsModule,
     MatCardModule, 
     MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,

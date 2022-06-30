@@ -3,7 +3,6 @@
     <input 
     type="text"
     placeholder="Pesquise..."
-    [formControl]="searchInputControl"
     class="rounded text-sm text-black p-2 outline-none">
     <div fxLayout="row wrap">
         <!-- posicionamento dos cards -->
@@ -13,28 +12,28 @@
             fxFlex.sm="50"
             fxFlex.xs="100"
             fxLayout="column"
-            *ngFor="let character of characters | async"
+            *ngFor="let comic of comics | async"
             style="padding: 5px;"> 
             <mat-card>
-                <img 
+                <!-- <img 
                     mat-card-image 
-                    src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}" 
+                    src="{{ comic }}.{{ character.thumbnail.extension }}" 
                     [alt]="character.name"
                     [title]="character.name"
-                >
-                <mat-card-title class="text-center" [title]="character.name">
-                    {{ character.name }}
+                > -->
+                <mat-card-title class="text-center" [title]="comic.title">
+                    {{ comic.title }} - {{ comic.pageCount }} páginas.
                 </mat-card-title>
                 <!-- detalhes - personagens -->
                 <mat-card-footer>
-                    <button 
+                    <!-- <button 
                         (click)="openDialog(character)" 
                         fxFlex mat-raised-button 
                         color="primary"
                         title="Ver detalhes"
                     >
                         Ver detalhes
-                    </button>
+                    </button> -->
                 </mat-card-footer>
             </mat-card>
         </div>
