@@ -15,11 +15,6 @@ export class CharactersComponent implements OnInit {
   searchInputControl: FormControl = new FormControl();
 
   characters!: Observable<any>;
-  comics!: Observable<any>;
-  creators!: Observable<any>;
-  events!: Observable<any>;
-  series!: Observable<any>;
-  stories!: Observable<any>;
   
   constructor(
     private _marvelService: MarvelApiService,

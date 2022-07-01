@@ -12,17 +12,17 @@
             fxFlex.sm="50"
             fxFlex.xs="100"
             fxLayout="column"
-            *ngFor="let comic of comics | async"
+            *ngFor="let creator of creators | async"
             style="padding: 5px;"> 
             <mat-card>
                 <img 
                     mat-card-image 
-                    src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" 
-                    [alt]="comic.title"
-                    [title]="comic.title"
+                    src="{{ creator.thumbnail.path }}.{{ creator.thumbnail.extension }}" 
+                    [alt]="creator.fullName"
+                    [title]="creator.fullName"
                 >
-                <mat-card-title class="text-center" [title]="comic.title">
-                    {{ comic.title }} - {{ comic.pageCount }} páginas.
+                <mat-card-title class="text-center" [title]="creator.fullName">
+                    {{ creator.fullName }}
                 </mat-card-title>
                 <!-- detalhes - personagens -->
                 <mat-card-footer>
