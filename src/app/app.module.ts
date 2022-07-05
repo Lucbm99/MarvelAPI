@@ -16,7 +16,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatListModule } from '@angular/material/list';
-import { CharactersComponent } from './components/characters/characters.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComicsComponent } from './components/comics/comics.component';
 import { CreatorsComponent } from './components/creators/creators.component';
@@ -29,7 +28,6 @@ import { StoriesComponent } from './components/stories/stories.component';
     AppComponent,
     ModalDetailsCharactersComponent,
     NavbarComponent,
-    CharactersComponent,
     ComicsComponent,
     CreatorsComponent,
     EventsComponent,
