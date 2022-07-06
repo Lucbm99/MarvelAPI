@@ -1,3 +1,5 @@
+import { ModalDetailsComicsComponent } from './modal-details-comics/modal-details-comics.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MarvelApiService } from 'src/app/services/marvel-api.service';
@@ -12,7 +14,8 @@ export class ComicsComponent implements OnInit {
   comics!: Observable<any>;
   
   constructor(
-    private _marvelService: MarvelApiService
+    private _marvelService: MarvelApiService,
+    private _matDialog: MatDialog,  
   ) { }
 
   ngOnInit(): void {
@@ -21,5 +24,14 @@ export class ComicsComponent implements OnInit {
 
   getComics() {
     this.comics = this._marvelService.getComics();
+  }
+
+  
+  showDetailsComics(comic: any) {
+    const dialogRef = this._matDialog.open(ModalDetailsComicsComponent, {
+      data: { comic },
+      width: '60vw',
+    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 }

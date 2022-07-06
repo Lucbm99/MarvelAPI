@@ -1,10 +1,10 @@
 <div fxFlex fxLayout="column">
-    <app-navbar></app-navbar>
-    <input 
+    <span class="text-center text-xl bold bg-red-300" title="Marvel - Personagens">Marvel - Personagens</span>
+    <!-- <input 
     type="text"
     placeholder="Pesquise..."
     [formControl]="searchInputControl"
-    class="rounded text-sm text-black p-2 outline-none">
+    class="rounded text-sm text-black p-2 outline-none"> -->
     <div fxLayout="row wrap">
         <!-- posicionamento dos cards -->
         <div 
@@ -28,7 +28,7 @@
                 <!-- detalhes - personagens -->
                 <mat-card-footer>
                     <button 
-                        (click)="openDialog(character)" 
+                        (click)="showDetailsCharacters(character)" 
                         fxFlex mat-raised-button 
                         color="primary"
                         title="Ver detalhes"

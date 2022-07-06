@@ -1,0 +1,49 @@
+<div class="flex flex-col min-w-200 max-h-screen -m-6">
+    <!-- Header -->
+    <div class="header-modal">
+        <div class="text-lg text-white font-medium" title="Informações - História: {{ events.event.title }}">Informações - Personagem: {{ events.event.title }}</div>
+    </div>
+    <div
+        class="flex flex-col flex-auto p-6 sm:p-8"
+    >
+        <h3 title="Descrição">Descrição:</h3> 
+            <p [title]="events.event.description">
+                {{events.event.description}}
+            </p>
+        <hr>
+        <h3 title="Data de início">Data de início:</h3> 
+            <p [title]="events.event.start">
+                {{events.event.start | date: 'dd/MM/yyyy'}}
+            </p>
+        <hr>
+        <h3 title="Data de término">Data de término:</h3> 
+            <p [title]="events.event.end">
+                {{events.event.end | date: 'dd/MM/yyyy'}}
+            </p>
+        <hr>
+        <ul>
+            <h3 title="Criadores">Criadores:</h3>
+            <span *ngFor="let events of events.event.creators.items">
+                <li class="list-inside" [title]="events.name">{{events.name}}</li>              
+            </span>
+        </ul>
+        <hr>
+        <ul>
+            <h3 title="Personagens">Personagens:</h3>
+            <span *ngFor="let events of events.event.characters.items">
+                <li class="list-inside" [title]="events.name">{{events.name}}</li>              
+            </span>
+        </ul>
+    </div>
+    <!-- footer -->
+    <div class="p-4 flex justify-end footer-modal">
+        <button
+            class="sm:mx-3 bg-red-300"
+            mat-stroked-button            
+            (click)="closeModalEvents()"
+            title="Fechar modal"
+            >
+            <span title="Fechar modal">Fechar</span>
+        </button>
+    </div>
+</div>

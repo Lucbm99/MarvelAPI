@@ -1,0 +1,56 @@
+<div class="flex flex-col min-w-200 max-h-screen -m-6">
+    <!-- Header -->
+    <div class="header-modal">
+        <div class="text-lg text-white font-medium" title="Informações - História: {{ series.serie.title }}">Informações - Personagem: {{ series.serie.title }}</div>
+    </div>
+    <div
+        class="flex flex-col flex-auto p-6 sm:p-8"
+    >
+        <h3 title="Descrição">Descrição:</h3> 
+            <p [title]="series.serie.description">
+                {{series.serie.description ?? '-'}}
+            </p>
+        <hr>
+        <h3 title="Ano de início">Ano de início:</h3> 
+            <p [title]="series.serie.startYear">
+                {{ series.serie.startYear }}
+            </p>
+        <hr>
+        <h3 title="Ano de término">Ano de término:</h3> 
+            <p [title]="series.serie.endYear">
+                {{ series.serie.endYear }}
+            </p>
+        <hr>
+        <ul>
+            <h3 title="Criadores">Criadores:</h3>
+            <span *ngFor="let series of series.serie.creators.items">
+                <li class="list-inside" [title]="series.name">{{series.name ?? '-'}}</li>              
+            </span>
+        </ul>
+        <hr>
+        <ul>
+            <h3 title="Personagens">Personagens:</h3>
+            <span *ngFor="let series of series.serie.characters.items">
+                <li class="list-inside" [title]="series.name">{{series.name ?? '-'}}</li>              
+            </span>
+        </ul>
+        <hr>
+        <ul>
+            <h3 title="Histórias">Histórias:</h3>
+            <span *ngFor="let series of series.serie.stories.items">
+                <li class="list-inside" [title]="series.name">{{series.name ?? '-'}}</li>              
+            </span>
+        </ul>
+    </div>
+    <!-- footer -->
+    <div class="p-4 flex justify-end footer-modal">
+        <button
+            class="sm:mx-3 bg-red-300"
+            mat-stroked-button            
+            (click)="closeModalSeries()"
+            title="Fechar modal"
+            >
+            <span title="Fechar modal">Fechar</span>
+        </button>
+    </div>
+</div>

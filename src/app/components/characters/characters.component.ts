@@ -1,4 +1,4 @@
-import { ModalDetailsCharactersComponent } from './../modal-details-characters/modal-details-characters.component';
+import { ModalDetailsCharactersComponent } from './modal-details-characters/modal-details-characters.component';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
@@ -24,26 +24,13 @@ export class CharactersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCharacters();
-
-    this.searchInputControl.valueChanges
-    .pipe(
-        debounceTime(300),
-        switchMap((search) => {
-            console.log(search);
-            return this._marvelService.getCharacters();
-        }),
-        map(() => {
-        })
-      )
-      .subscribe();
-    }
+  }
   
-
   getCharacters() {
     this.characters = this._marvelService.getCharacters();
   }
 
-  openDialog(character: any) {
+  showDetailsCharacters(character: any) {
     const dialogRef = this._matDialog.open(ModalDetailsCharactersComponent, {
       data: { character },
       width: '60vw',
