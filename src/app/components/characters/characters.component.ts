@@ -13,9 +13,9 @@ import { debounceTime, map, switchMap } from 'rxjs/operators';
 })
 export class CharactersComponent implements OnInit {
   searchInputControl: FormControl = new FormControl();
-
+  showLoader: boolean = false;
   characters!: Observable<any>;
-  
+
   constructor(
     private _marvelService: MarvelApiService,
     private _matDialog: MatDialog,
@@ -23,7 +23,20 @@ export class CharactersComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.showLoader = true;
     this.getCharacters();
+    console.log(this.showLoader)
+    if(Object.values(this.characters).length > 0) {
+      console.log(this.showLoader)
+
+      this.showLoader = false; 
+      console.log(this.showLoader)
+
+    }
+
+    if(this.showLoader === false) {
+      this.showLoader = true;
+    }
   }
   
   getCharacters() {

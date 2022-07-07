@@ -23,6 +23,7 @@ import { CharactersComponent } from './components/characters/characters.componen
 import { ModalDetailsComicsComponent } from './components/comics/modal-details-comics/modal-details-comics.component';
 import { ModalDetailsEventsComponent } from './components/events/modal-details-events/modal-details-events.component';
 import { ModalDetailsSeriesComponent } from './components/series/modal-details-series/modal-details-series.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ModalDetailsSeriesComponent } from './components/series/modal-details-s
     MatListModule,
     MatSidenavModule,
     MatDialogModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
