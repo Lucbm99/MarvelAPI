@@ -1,11 +1,6 @@
 <div fxFlex fxLayout="column">
     <span class="text-center text-xl bold bg-red-300" title="Marvel - Personagens">Marvel - Personagens</span>
-    <!-- <input 
-    type="text"
-    placeholder="Pesquise..."
-    [formControl]="searchInputControl"
-    class="rounded text-sm text-black p-2 outline-none"> -->
-    <div *ngIf="showLoader" class="mt-5 text-center">
+    <div *ngIf="showLoaderCharacters" class="mt-5 flex justify-center">
         <mat-spinner></mat-spinner>
     </div>
     <div fxLayout="row wrap">
@@ -16,7 +11,7 @@
             fxFlex.sm="50"
             fxFlex.xs="100"
             fxLayout="column"
-            *ngFor="let character of characters | async"
+            *ngFor="let character of dataCharacters"
             style="padding: 5px;"> 
             <mat-card>
                 <img 

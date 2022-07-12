@@ -18,12 +18,20 @@ export class EventsComponent implements OnInit {
 
   events!: Observable<any>;
 
+  showLoaderEvents: boolean = true;
+  dataEvents: any;
+
   ngOnInit(): void {
     this.getEvents();
   }
 
   getEvents() {
-    this.events = this._marvelService.getEvents();
+    this._marvelService.getEvents().subscribe((response) => {
+      if (response) {
+        this.showLoaderEvents = false;
+      }
+      this.dataEvents = response;
+    });
   }
 
   showDetailsEvents(event: any) {
