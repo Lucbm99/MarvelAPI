@@ -1,5 +1,5 @@
 <div fxFlex fxLayout="column">
-    <span class="text-center text-xl bold bg-red-300" title="Marvel - Histórias em quadrinhos">Marvel - Histórias em quadrinhos</span>
+    <span class="text-center text-xl bold bg-red-300" aria-label="Marvel - Histórias em quadrinhos">Marvel - Histórias em quadrinhos</span>
     <!-- <app-navbar></app-navbar>
     <input 
     type="text"
@@ -20,9 +20,9 @@
                     mat-card-image 
                     src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" 
                     [alt]="comic.title"
-                    [title]="comic.title"
+                    [attr.aria-label]="comic.title"
                 >
-                <mat-card-title class="text-center truncate" [title]="comic.title">
+                <mat-card-title class="text-center truncate" [attr.aria-label]="comic.title">
                     {{ comic.title }}
                 </mat-card-title>
                 <!-- detalhes - histórias em quadrinhos -->
@@ -31,7 +31,7 @@
                         (click)="showDetailsComics(comic)" 
                         fxFlex mat-raised-button 
                         color="primary"
-                        title="Ver detalhes"
+                        aria-label="Ver detalhes"
                     >
                         Ver detalhes
                     </button>

@@ -1,5 +1,5 @@
 <div fxFlex fxLayout="column">
-    <span class="text-center text-xl bold bg-red-300" title="Marvel - Personagens">Marvel - Personagens</span>
+    <span class="text-center text-xl bold bg-red-300" aria-label="Marvel - Personagens">Marvel - Personagens</span>
     <div *ngIf="showLoaderCharacters" class="mt-5 flex justify-center">
         <mat-spinner></mat-spinner>
     </div>
@@ -18,9 +18,9 @@
                     mat-card-image 
                     src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}" 
                     [alt]="character.name"
-                    [title]="character.name"
+                    [attr.aria-label]="character.name"
                 >
-                <mat-card-title class="text-center" [title]="character.name">
+                <mat-card-title class="text-center" [attr.aria-label]="character.name">
                     {{ character.name }}
                 </mat-card-title>
                 <!-- detalhes - personagens -->
@@ -29,7 +29,7 @@
                         (click)="showDetailsCharacters(character)" 
                         fxFlex mat-raised-button 
                         color="primary"
-                        title="Ver detalhes"
+                        aria-label="Ver detalhes"
                     >
                         Ver detalhes
                     </button>

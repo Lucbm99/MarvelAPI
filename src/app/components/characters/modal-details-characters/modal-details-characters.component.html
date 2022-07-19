@@ -1,41 +1,41 @@
 <div class="flex flex-col min-w-200 max-h-screen -m-6">
     <!-- Header -->
     <div class="header-modal">
-        <div class="text-lg text-white font-medium" title="Informações - Personagem: {{ details.character.name }}">Informações - Personagem: {{ details.character.name }}</div>
+        <div class="text-lg text-white font-medium" aria-label="Informações - Personagem: {{ details.character.name }}">Informações - Personagem: {{ details.character.name }}</div>
     </div>
     <div
         class="flex flex-col flex-auto p-6 sm:p-8"
     >
-        <h3 title="Descrição">Descrição:</h3> 
-            <p [title]="details.character.description">
+        <h3 aria-label="Descrição">Descrição:</h3> 
+            <p [attr.aria-label]="details.character.description">
                 {{details.character.description}}
             </p>
         <hr>
         <ul>
-            <h3 title="Histórias em quadrinhos">Histórias em quadrinhos:</h3>
+            <h3 aria-label="Histórias em quadrinhos">Histórias em quadrinhos:</h3>
             <span *ngFor="let character of details.character.comics.items">
-                <li class="list-inside" [title]="character.name">{{character.name}}</li>              
+                <li class="list-inside" [attr.aria-label]="character.name">{{character.name}}</li>              
             </span>
         </ul>
         <hr>
         <ul>
-            <h3 title="Eventos">Eventos:</h3>
+            <h3 aria-label="Eventos">Eventos:</h3>
             <span *ngFor="let character of details.character.events.items">
-                <li class="list-inside" [title]="character.name">{{character.name}}</li>              
+                <li class="list-inside" [attr.aria-label]="character.name">{{character.name}}</li>              
             </span>
         </ul>
         <hr>
         <ul>
-            <h3 title="Series">Series:</h3>
+            <h3 aria-label="Series">Series:</h3>
             <span *ngFor="let character of details.character.series.items">
-                <li class="list-inside" [title]="character.name">{{character.name}}</li>              
+                <li class="list-inside" [attr.aria-label]="character.name">{{character.name}}</li>              
             </span>
         </ul>
         <hr>
         <ul>
-            <h3 title="Histórias">Histórias:</h3>
+            <h3 aria-label="Histórias">Histórias:</h3>
             <span *ngFor="let character of details.character.stories.items">
-                <li class="list-inside" [title]="character.name">{{character.name}}</li>              
+                <li class="list-inside" [attr.aria-label]="character.name">{{character.name}}</li>              
             </span>
         </ul>
         <hr>
@@ -47,9 +47,9 @@
             class="sm:mx-3 bg-red-300"
             mat-stroked-button            
             (click)="closeModalCharacters()"
-            title="Fechar modal"
+            aria-label="Fechar modal"
             >
-            <span title="Fechar modal">Fechar</span>
+            <span aria-label="Fechar modal">Fechar</span>
         </button>
     </div>
 </div>

@@ -1,37 +1,37 @@
 <div class="flex flex-col min-w-200 max-h-screen -m-6">
     <!-- Header -->
     <div class="header-modal">
-        <div class="text-lg text-white font-medium" title="Informações - História: {{ comics.comic.title }}">Informações - Personagem: {{ comics.comic.title }}</div>
+        <div class="text-lg text-white font-medium" aria-label="Informações - História: {{ comics.comic.title }}">Informações - Personagem: {{ comics.comic.title }}</div>
     </div>
     <div
         class="flex flex-col flex-auto p-6 sm:p-8"
     >
-        <h3 title="Descrição">Descrição:</h3> 
-            <p [title]="comics.comic.description">
+        <h3 aria-label="Descrição">Descrição:</h3> 
+            <p [attr.aria-label]="comics.comic.description">
                 {{comics.comic.description}}
             </p>
         <hr>
-        <h3 title="Formato">Formato:</h3> 
-            <p [title]="comics.comic.format">
+        <h3 aria-label="Formato">Formato:</h3> 
+            <p [attr.aria-label]="comics.comic.format">
                 {{comics.comic.format}}
             </p>
         <hr>
-        <h3 title="Quantidade de páginas">Quantidade de páginas:</h3> 
-            <p [title]="comics.comic.pageCount">
+        <h3 aria-label="Quantidade de páginas">Quantidade de páginas:</h3> 
+            <p [attr.aria-label]="comics.comic.pageCount">
                 {{comics.comic.pageCount}}
             </p>
         <hr>
         <ul>
-            <h3 title="Criadores">Criadores:</h3>
+            <h3 aria-label="Criadores">Criadores:</h3>
             <span *ngFor="let comics of comics.comic.creators.items">
-                <li class="list-inside" [title]="comics.name">{{comics.name}}</li>              
+                <li class="list-inside" [attr.aria-label]="comics.name">{{comics.name}}</li>              
             </span>
         </ul>
         <hr>
         <ul>
-            <h3 title="Personagens">Personagens:</h3>
+            <h3 aria-label="Personagens">Personagens:</h3>
             <span *ngFor="let comics of comics.comic.characters.items">
-                <li class="list-inside" [title]="comics.name">{{comics.name}}</li>              
+                <li class="list-inside" [attr.aria-label]="comics.name">{{comics.name}}</li>              
             </span>
         </ul>
     </div>
@@ -41,9 +41,9 @@
             class="sm:mx-3 bg-red-300"
             mat-stroked-button            
             (click)="closeModalComics()"
-            title="Fechar modal"
+            aria-label="Fechar modal"
             >
-            <span title="Fechar modal">Fechar</span>
+            <span aria-label="Fechar modal">Fechar</span>
         </button>
     </div>
 </div>
