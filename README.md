@@ -36,6 +36,7 @@ NPM: https://npmjs.com
 🚧 Finalizado 🚧
 
 Link para acesso: https://marvel-api-flax.vercel.app/
+
 Vídeo demo da aplicação: https://youtu.be/2IQYFd3lJSA
 
 
