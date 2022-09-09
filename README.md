@@ -53,7 +53,7 @@ Vídeo demo da aplicação: https://youtu.be/2IQYFd3lJSA
 Consulte o arquivo LICENSE.md, para maiores detalhes.
 
 ## ✒️ Autores
-Aplicação feito por mim - [Lucbm99](https://github.com/Lucbm99)
+Aplicação feita por mim - [Lucbm99](https://github.com/Lucbm99)
 
 
 
