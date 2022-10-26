@@ -1,7 +1,7 @@
 # Consumo de API - Marvel
 Para fins de estudo do framework Angular, foi feita uma aplicação para consumir os dados da API fornecida pela Marvel, consumindo dados dos personagens e dos eventos, exibindo os mesmos em uma modal.
 
-Link da API: https://developer.marvel.com/
+Link da API: https://developer.marvel.com
 
 
 ## 🚀 Instruções 
