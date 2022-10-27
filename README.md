@@ -12,13 +12,13 @@ Para isso, você irá precisar basicamente ter um editor de código em sua máqu
 
 Links úteis: 
 
-VS Code: https://code.visualstudio.com/
+VS Code: https://code.visualstudio.com
 
-Git: https://git-scm.com/
+Git: https://git-scm.com
 
-Sublime Text: https://www.sublimetext.com/
+Sublime Text: https://www.sublimetext.com
 
-NodeJS: https://nodejs.org/en/
+NodeJS: https://nodejs.org/en
 
 NPM: https://npmjs.com
 
