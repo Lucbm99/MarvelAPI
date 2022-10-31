@@ -46,7 +46,7 @@ Vídeo demo da aplicação: https://youtu.be/2IQYFd3lJSA
 * [NodeJS](https://nodejs.org/en/)
 * [Angular](http://angular.io/)
 * [Git](https://git-scm.com/downloads)
-* [NPM](https://npmjs.com/)
+* [NPM](https://npmjs.com)
 
 
 ## ✒️ Licença 
